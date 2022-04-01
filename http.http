@@ -1,0 +1,59 @@
+### 
+GET http://localhost:3000 HTTP/1.1
+
+### 
+GET http://localhost:3000/user HTTP/1.1
+
+### 
+GET http://localhost:3000/addressbook HTTP/1.1
+
+### 
+POST http://localhost:3000/user HTTP/1.1
+  content-type: application/json 
+
+  {
+    "username": "Git",
+    "email": "git@gmail.com"
+  }
+
+
+### 
+POST http://localhost:3000/addressbook HTTP/1.1
+  content-type: application/json 
+
+  {
+    "name":"Okay okay",
+    "phone": "123456789",
+    "email": "email@email.com",
+    "work": "Frontend",
+    "userid": "948"
+  }
+
+
+
+### 
+GET http://localhost:3000/addressbook/4 HTTP/1.1
+
+### 
+DELETE  http://localhost:3000/user/947 HTTP/1.1
+### 
+
+DELETE  http://localhost:3000/addressbook/967 HTTP/1.1
+
+### 
+PATCH   http://localhost:3000/user/2 HTTP/1.1
+ content-type: application/json 
+
+  {
+    "username": "Jordan",
+    "email":"jordanpeterson@gmail.com"
+  }
+
+
+### 
+PATCH   http://localhost:3000/addressbook/965 HTTP/1.1
+ content-type: application/json 
+
+  {
+    "work": "Backend"
+  }
