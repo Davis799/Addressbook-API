@@ -5,6 +5,9 @@ GET http://localhost:3000 HTTP/1.1
 GET http://localhost:3000/user HTTP/1.1
 
 ### 
+GET http://localhost:3000/user/948 HTTP/1.1
+
+### 
 GET http://localhost:3000/addressbook HTTP/1.1
 
 ### 
@@ -32,13 +35,13 @@ POST http://localhost:3000/addressbook HTTP/1.1
 
 
 ### 
-GET http://localhost:3000/addressbook/4 HTTP/1.1
+GET http://localhost:3000/addressbook/3 HTTP/1.1
 
 ### 
-DELETE  http://localhost:3000/user/947 HTTP/1.1
+DELETE  http://localhost:3000/user/950 HTTP/1.1
 ### 
 
-DELETE  http://localhost:3000/addressbook/967 HTTP/1.1
+DELETE  http://localhost:3000/addressbook/968 HTTP/1.1
 
 ### 
 PATCH   http://localhost:3000/user/2 HTTP/1.1

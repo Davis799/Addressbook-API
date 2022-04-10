@@ -30,10 +30,9 @@ export class AddressbookController {
 
     @Get(':id')
     async getAddress(@Param('id') id:string){
-        const SingleAddress = await this.addressbookservice.getSingleAddress(id);
+        const Address = await this.addressbookservice.getSingleAddress(id);
         return{
-            message: 'Address fetched successfully',
-            SingleAddress
+            Address
         }
     }
 

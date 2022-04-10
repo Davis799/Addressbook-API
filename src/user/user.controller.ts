@@ -8,7 +8,6 @@ import { UsersDTO } from './user.dto';
 export class UserController {
     constructor(private userservice: UserService){}
 
-
     @Post()
     async createUsers(@Body() data:UsersDTO) {
         const user = await this.userservice.insertUser( data );
@@ -30,7 +29,6 @@ export class UserController {
     async showSingleUser(@Param('id') id:string){
         const user = await this.userservice.getSingleUser(id);
         return {
-            message: 'User fetched successfully',
             user
           };
     }

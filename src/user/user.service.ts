@@ -21,8 +21,8 @@ export class UserService {
         return await this.userRepo.find({ relations: ["addresses"]});
       }
 
-    async deleteUser(id: string): Promise<User>{
-       const deleteduser = await this.userRepo.findOneOrFail(id);
+    async deleteUser(userid: string): Promise<User>{
+       const deleteduser = await this.userRepo.findOneOrFail(userid);
 
        return this.userRepo.remove(deleteduser);
       }
@@ -36,8 +36,11 @@ export class UserService {
       }  
 
       async getSingleUser(userid: string) {
-        return await this.userRepo.findOne({where: {id:userid}});
-      
+        const singleUser = await this.userRepo.findOne({where:{userid}});
+        if (!singleUser){
+          throw new NotFoundException;
+        }
+        return singleUser;
       }  
 
 }

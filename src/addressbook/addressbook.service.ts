@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Address } from './addressbook.model';
-import { generate } from 'shortid';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AddressDTO } from './addressbook.dto';
@@ -24,8 +23,12 @@ export class AddressbookService {
     return await this.addyRepo.find();
   }
 
-  async getSingleAddress(AddyId: string) {
-    return await this.addyRepo.findOne({where: {id:AddyId}});
+  async getSingleAddress(id: string) {
+    const singleAddy = await this.addyRepo.findOne({where:{id}});
+    if (!singleAddy){
+      throw new NotFoundException;
+    }
+    return singleAddy
   }
 
   async deleteAddress(id: string){
